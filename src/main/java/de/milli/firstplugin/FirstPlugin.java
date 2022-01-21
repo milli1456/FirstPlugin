@@ -6,7 +6,6 @@ public final class FirstPlugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
         PluginManager pm = Bukkit.getPluginManager();
         pm.registerEvents(new OnPlayerJoinEvent(),this);
         pm.registerEvents(new OnBlockBreakEvent(), this );
