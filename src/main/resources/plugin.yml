@@ -1,0 +1,8 @@
+name: Firstplugin
+version: '${project.version}'
+main: de.milli.firstplugin.FirstPlugin
+api-version: 1.17
+authors: [ milli ]
+description: Mein erstes Plugin
+commands:
+  heal:
