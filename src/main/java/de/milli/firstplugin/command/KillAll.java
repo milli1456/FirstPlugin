@@ -1,13 +1,11 @@
 package de.milli.firstplugin.command;
 
-import de.milli.firstplugin.FirstPlugin;
 import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
-import org.bukkit.plugin.java.JavaPlugin;
 
 public class KillAll implements CommandExecutor {
     @Override
@@ -15,20 +13,17 @@ public class KillAll implements CommandExecutor {
         if(sender instanceof Player) {
             Player player = (Player) sender;
             if(player.isOp()){
-
+                killEntity(player.getWorld());
             }else {
                 player.sendMessage("§4Keine Rechte");
             }
-        }else{
         }
         return true;
     }
 
-   /* public static void killEntitys(){
-        for (Entity entity : FirstPlugin.getPlugin().getServer().getWorld("world").getEntities()) {
-
+   public static void killEntity(World world){
+        for (Entity entity : world.getEntities()) {
+            entity.remove();
         }
     }
-
-    */
 }

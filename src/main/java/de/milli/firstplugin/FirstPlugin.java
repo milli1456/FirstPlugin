@@ -1,5 +1,6 @@
 package de.milli.firstplugin;
 
+import de.milli.firstplugin.command.KillAll;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class FirstPlugin extends JavaPlugin {
@@ -12,6 +13,7 @@ public final class FirstPlugin extends JavaPlugin {
         pm.registerEvents(new OnBlockBreakEvent(), this );
         pm.registerEvents(new OnInteractEvent(), this );
         getCommand("heal").setExecutor(new HealCommand());
+        getCommand("killall").setExecutor(new KillAll());
         getLogger().info("§aDas plugin ist Aktiviert");
     }
 
